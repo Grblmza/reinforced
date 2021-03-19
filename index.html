@@ -245,11 +245,94 @@
     </div>
 </section>
 
+<section class="we-were-chosen">
+    <div class="container">
+        <h2>Нас выбрали</h2>
+        <div class="company-logo">
+            <img src="img/we-were-chosen1.png" alt="">
+            <img src="img/we-were-chosen2.png" alt="">
+            <img src="img/we-were-chosen3.png" alt="">
+            <img src="img/we-were-chosen4.png" alt="">
+            <img src="img/we-were-chosen5.png" alt="">
+            <img src="img/we-were-chosen6.png" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="company-coordinates">
+    <div id="yandexmap" class="company-coordinates__map"></div>
+
+    <div class="contacts-wrapper">
+        <div class="container">
+            <div class="contacts">
+                <img src="img/icon/company-coordinates-logo.jpg" alt="">
+                <ol class="cont">
+                    <li>г. Ярославль, ул. Чернопрудная 30</li>
+                    <li>+7 (4852) 43-65-71</li>
+                    <li>betonmobil@yandex.ru</li>
+                    <li>Россия, г.Ярославль,
+                        ул. Чернопрудная, д.30
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer__navigation">
+    <div class="container nav-columns">
+        <div class="nav-column nav-column1">
+            <img src="img/icon/footer__navigation-logo.png" alt="">
+            <p>Политика
+                конфиденциальнности</p>
+            <p>Соглашение на обработку персональных данных</p>
+        </div>
+        <div class="nav-column nav-column2">
+            <ul>
+                <li>Главная</li>
+                <li>Цены</li>
+                <li>О нас</li>
+                <li>Отзывы</li>
+            </ul>
+        </div>
+        <div class="nav-column nav-column3">
+            <ul>
+                <li>vkontakte</li>
+                <li>viber</li>
+                <li>instagram</li>
+                <li>whatsapp</li>
+            </ul>
+        </div>
+        <div class="nav-column nav-column4">
+            <p>г. Ярославль, ул. Чернопрудная 30</p>
+            <p>+7 (4852) 43-65-71</p>
+            <p>betonmobil@yandex.ru</p>
+
+            <a href="#">Перезвонить мне</a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"
+        type="text/javascript"></script>
+
 <script>
-    function myLog() {
-        console.log(123);
-        console.log(document)
+    var map;
+
+    function initMap() {
+        map = new ymaps.Map("yandexmap", {
+            center: [56.039017, 92.894853],
+            zoom: 16
+        });
+
+        var marker = new ymaps.Placemark([56.039017, 92.894853], {
+            hintContent: 'Расположение',
+            balloonContent: 'Это наша организация'
+        });
+        map.geoObjects.add(marker);
     }
+
+    ymaps.ready(initMap);
 </script>
 </body>
 </html>
